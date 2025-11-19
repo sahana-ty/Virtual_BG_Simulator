@@ -9,7 +9,13 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
+"dependencies": {
     "virtual-background-simulator": "file:"
+  },
+  "devDependencies": {  
+    "@vue/cli-service": "^5.0.8",  
+    "@vue/cli-plugin-babel": "^5.0.8" 
+    
   }
+  
 }
