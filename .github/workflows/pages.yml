@@ -4,7 +4,7 @@ name: Deploy Static Project to Pages
 
 on:
   push:
-    branches: ["main"] # Keep this as "main"
+    branches: ["main"] # Ensures deployment runs when code is pushed to 'main'
   workflow_dispatch:
 
 # Sets permissions to allow deployment to GitHub Pages
@@ -30,7 +30,7 @@ jobs:
         run: |
           # Install dependencies
           npm install
-          # Run your build command
+          # Run your build command (uses the new script from package.json)
           npm run build
 
       - name: Setup Pages
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # The directory that contains the deployable assets
+          # The directory that contains the deployable assets after the build
           path: './dist' 
 
   deploy:
